@@ -22,7 +22,7 @@ namespace Program
             double side_2 = Math.Sqrt(Math.Pow((x_3 - x_2), 2) + Math.Pow((y_3 - y_2), 2));
             double side_3 = Math.Sqrt(Math.Pow((x_1 - x_3), 2) + Math.Pow((y_1 - y_3), 2));
             double perimeter = side_1 + side_2 + side_3;
-            Console.WriteLine("Периметр трикутника = {0:f4}", perimeter);
+            Console.WriteLine($"Периметр трикутника = {perimeter}");
         
             
         }
