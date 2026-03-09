@@ -7,7 +7,7 @@ namespace Program
     {
         static void Main()
         {
-            Console.WriteLine("Введіть координати трикутника:");
+            Console.WriteLine("Введіть координати чотирикутника:");
             Console.Write("Координати вершини A (x_1, y_1): ");
             double x_1 = double.Parse(Console.ReadLine());
             double y_1 = double.Parse(Console.ReadLine());
