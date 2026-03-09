@@ -14,6 +14,7 @@ namespace Application1
             int sum_3=0;
             for (int i=1;i<=n; i++)
                 sum_2+=2*i*2*i;
+            
             for (int i=1;i<=n; i++)
                 sum_3+=(2*i+1)*(2*i+1)*(2*i+1);
             int s=sum_2+sum_3;
