@@ -4,15 +4,10 @@ using System;
 namespace Aplication4
 {
     class Program{
-        static int GeometricProgression(int x1,int x2,int x3,int x4)
+        static bool IsGeometricProgression(params int[] numbers)
         {
-            bool progression = x2*x2==x1*x3 && x3*x3==x2*x4;
-
-            if(progression)
-            {
-                return 1;
-            }
-            return 0;
+            bool progression = numbers[1]*numbers[1]==numbers[0]*numbers[2] && numbers[2]*numbers[2]==numbers[1]*numbers[3];
+            return progression;
         }
         static void Main()
         {
@@ -27,7 +22,7 @@ namespace Aplication4
             int count=0;
             for (int i=0; i<n-3; i++)
             {
-               count+=GeometricProgression(numbers[i],numbers[i+1],numbers[i+2],numbers[i+3]);
+               count+=IsGeometricProgression(numbers[i],numbers[i+1],numbers[i+2],numbers[i+3]) ? 1 : 0;
             }
             Console.WriteLine($"Число геометричних прогресій {count}");
         }
