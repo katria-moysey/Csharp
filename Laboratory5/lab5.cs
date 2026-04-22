@@ -5,39 +5,47 @@
 ▪ знаходження найбільшої цифри;
 ▪ знаходження суми цифр.*/
 using System;
+using System.Security.AccessControl;
 
 namespace Lab5
 {
     class Set
     {
-        public int[] set;
-        public int count;
+        private int[] set;
+        private int count;
 
         public Set()
         {
             set = new int[10];
             count = 0;
         }
+        public Set( Set s)
+        {
+            this.count=s.count;
+            this.set=s.set;
+        }
 
         public void Add(int number)
         {
             if (number < 0 || number > 9)
             {
-                Console.WriteLine("Можна додавати тільки цифри від 0 до 9.");
+                Console.WriteLine($"Помилка: {number} не є цифрою ");
                 return;
             }
-
-
             for (int i = 0; i < count; i++)
             {
                 if (set[i] == number)
                 {
-                    Console.WriteLine($"Цифра {number} вже є у множині.");
-                    return;
-                }
+                   Console.WriteLine($"Помилка: {number} вже є в множині");
+                   return;  
+                } 
             }
+
+            if (count < set.Length)
+            {
                 set[count] = number;
                 count++;
+            }
         }
 
         public void Print()
@@ -55,10 +63,7 @@ namespace Lab5
             int max = set[0];
             for (int i = 1; i < count; i++)
             {
-                if (set[i] > max)
-                {
-                    max = set[i];
-                }
+                if (set[i] > max) max = set[i];
             }
             return max;
         }
@@ -92,6 +97,9 @@ namespace Lab5
             set1.Print();
             Console.WriteLine($"Найбільша цифра: {set1.Max()}");
             Console.WriteLine($"Сума всіх цифр: {set1.Sum()}");
+            Set set2= new Set(set1);
+            Console.WriteLine("Множина set2");
+            set2.Print();
         }
     }
 }
