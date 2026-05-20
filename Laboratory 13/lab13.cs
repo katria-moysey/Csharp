@@ -150,7 +150,7 @@ class Program
         }
     }
 
-    // b) Вивести сумарну кількість студентів 1-го курсу ФІТ, які займаються у гуртках із заданими назвами
+    // b) Вивести сумарну кількість студентів 1-го курсу, які займаються у гуртках із заданими назвами
     static void TaskB(List<Student> students, List<Group> groups, List<Club> clubs)
     {
         var targetClubs = new List<string>
